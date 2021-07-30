@@ -1,0 +1,39 @@
+{
+  "name": "imagemin",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Инструмент оптимизации графики",
+  "main": "index.js",
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "start": "gulp",
+    "imagemin": "gulp optimize"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/css/**/*.css"
+  ],
+  "engines": {
+    "node": "14.15.0"
+  },
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "1.0.0",
+    "del": "6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "7.1.0",
+    "gulp-rename": "2.0.0",
+    "gulp-svgstore": "7.0.1",
+    "gulp-webp": "4.0.1",
+    "jimp": "^0.16.1",
+    "through2": "^4.0.2"
+  }
+}
