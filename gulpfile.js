@@ -17,6 +17,7 @@ const resizeItem = (width) => {
   return function resizeImage () {
     const quality = 100;
     return src('source/*.{jpg,png}')
+      .pipe(dest('build/'))
       .pipe(
         through2.obj(async function (file, _, cb) {
           if (file.isBuffer()) {
