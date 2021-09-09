@@ -57,6 +57,20 @@ const optimize = () => {
       ]
     })
   ]))
+  .pipe(dest('build/'));
+};
+
+const optimizeWebp = () => {
+  return src('source/*')
+  .pipe(imagemin([
+    imagemin.mozjpeg({ quality: 75, progressive: true }),
+    imagemin.optipng({ optimizationLevel: 3 }),
+    imagemin.svgo({
+      plugins: [
+        { removeViewBox: false },
+      ]
+    })
+  ]))
   .pipe(dest('build/'))
   .pipe(gulpWebp())
   .pipe(dest('build/'));
@@ -92,6 +106,12 @@ const sprite = () => {
 exports.optimize = series(
   clear,
   optimize,
+  sprite
+);
+
+exports.optimizeWebp = series(
+  clear,
+  optimizeWebp,
   sprite
 );
 

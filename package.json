@@ -7,7 +7,8 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "start": "gulp",
-    "imagemin": "gulp optimize"
+    "imagemin": "gulp optimize",
+    "imagemin-webp": "gulp optimizeWebp"
   },
   "browserslist": [
     "last 2 versions",
